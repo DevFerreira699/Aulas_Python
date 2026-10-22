@@ -16,7 +16,7 @@ ________________________________________________________________________________
 
 Dado	                           Regra de validação
                                  
-Idade	                           Deve estar entre 18 e 65 anos, inclusive
+Idade	                           Deve estar entre 18 e 65 anos
 Salário pretendido	               Deve ser maior que R$ 0
 Experiência	                       Não pode ser negativa
 ______________________________________________________________________________________
@@ -31,3 +31,15 @@ ________________________________________________________________________________
 Se algum dado for inválido, informe o problema e não faça a classificação profissional.
 '''
 
+nome = input("Qual seu nome: ")
+idade = int(input("Qual sua idade: "))
+salario = float(input("Qual seu salário pretendido: "))
+experiencia = float(input("Quanto tempo de experiencia voce tem: "))
+
+if not (18 <= idade <= 65) or salario <= 0 or experiencia < 0:
+    print("Inapto")   
+    
+elif experiencia >= 3:
+    print(f"O candidato {nome} é experiente")
+else:
+    print(f"O candidato {nome} é iniciante")
