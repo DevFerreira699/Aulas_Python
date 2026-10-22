@@ -18,3 +18,23 @@ Nota de 60 ou mais e experiência de 2 anos ou mais	     Aprovado
 Nota de 60 ou mais e experiência inferior a 2 anos	     Cadastro reserva
 ___________________________________________________________________________________
 '''
+
+nome = input("Qual o seu nome: ")
+idade = int(input("Qual a sua idade: "))
+
+
+if idade < 18:
+    print(f"O candidto {nome} está inelegivel")
+else:
+    experiencia = float(input("Quantos anos voce está na área: "))
+    
+    nota = float(input("Qual a sua nota: "))
+    
+    if nota < 60:
+        print(f"O candidato {nome} não está legivel")
+    elif (nota >= 60) and experiencia >= 2:
+        print(f"Meus parabens {nome}, voce está APROVADO")
+    else:
+        print(f"O candidto {nome} está como reserva no cadastro")
+        
+

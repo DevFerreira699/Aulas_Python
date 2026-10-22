@@ -25,5 +25,3 @@ else:
         print(f"O aluno {nome} está de Recuperação com a média {media}")
     else:
         print(f"O aluno {nome} está Reprovado com a média {media}")
-
-
