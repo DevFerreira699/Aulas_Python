@@ -43,12 +43,10 @@ for vendedor in range(3):
     
     if valor >= 5000:
         print(f"O vendedor {nome} atingiu a meta: {valor:.2f} este mes")
-        metaSim +=1
-        
+        metaSim +=1   
     elif valor >= 3000:
         print(f"O vendedor {nome} quase atingiu a meta: {valor:.2f} este mes")
-        metaQuase +=1
-        
+        metaQuase +=1  
     else:
         print(f"O vendedor {nome} não conseguiu atingir a meta necessaria")
         metaNao +=1
