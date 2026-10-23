@@ -1,12 +1,8 @@
 '''
-Exercício 1 — Contagem com for
-Objetivo: criar um programa que mostre os números de 1 até 10 na tela.
+Exercício 2 — Tabuada
+Objetivo: criar um programa que mostre a tabuada do número 5, de 1 até 10.
 
-Regras:
-- Use for.
-- Use range().
-- Mostre cada número com print().
 '''
 
-for a in range(1, 11):
-    print(a)
+for i in range(1, 11):
+    print(f"7 x {i} = {7 * i}")

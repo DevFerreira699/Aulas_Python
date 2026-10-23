@@ -66,5 +66,3 @@ for nome, valor in [
     ("Média das notas", media)
 ]:
     print(f"{nome}: {valor}")
-
-
