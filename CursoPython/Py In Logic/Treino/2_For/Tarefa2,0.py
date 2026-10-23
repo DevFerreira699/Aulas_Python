@@ -44,8 +44,3 @@ for aluno in range(5):
         aprovados += 1
     
         print(f"total de aprovados {aprovados}")
-        
-        
-        
-
-    

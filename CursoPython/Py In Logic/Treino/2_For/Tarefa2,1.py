@@ -18,7 +18,7 @@ somaNotas = 0
 for a in range(5):
     nome = input("Qual seu nome: ")
     nota = float(input("Qual sua nota: "))
-    
+  
     somaNotas += nota
     
     if nota < 5:
