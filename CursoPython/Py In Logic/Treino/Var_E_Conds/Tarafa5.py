@@ -54,7 +54,12 @@ experiencia = float(input("Quanto tempo de experiencia possui: "))
 nota = float(input("Qual a sua nota alcançada: "))
 escolaridade = input("Qual sua escolaridade").lower()
 
-if (idade < 18 or idade > 65) or salario <= 0 or experiencia < 0 or (nota < 0 or nota > 10) or escolaridade != "medio" and escolaridade != "tecnico" and escolaridade != "superior":
+if (
+    idade < 18 or idade > 65
+    or salario <= 0
+    or experiencia < 0
+    or nota < 0 or nota > 10
+    or escolaridade not in ("medio", "tecnico", "superior")):
     print("Dados inválidos")
     
 else:
@@ -73,6 +78,7 @@ else:
         print("Iniciante")
 
     if nota >= 5:
+    
         if salario <= 3000:
             print(f"O candidato {nome} está dentro do orçamento: {salario:.2f}")
         else:
