@@ -1,0 +1,45 @@
+'''
+2. while — repetição condicionada
+O while é usado quando você quer repetir uma instrução enquanto determinada condição for verdadeira.
+
+Imagine que você quer permitir que o usuário tente digitar uma senha até acertar.
+________________________________________________________________________________________
+
+            senha = ""
+
+            while senha != "1234":
+                senha = input("Digite a senha: ")
+
+            print("Acesso permitido!")
+
+
+            Como funciona?
+
+- senha = "": inicia a variável vazia.
+- while: verifica a condição antes de executar o bloco.
+- senha != "1234": significa que a senha é diferente de "1234".
+- Enquanto a senha estiver errada, o programa continuará solicitando outra.
+- Quando a senha estiver correta, a condição será falsa e o laço terminará.
+
+            Onde o while se enquadra?
+
+            É especialmente útil quando você precisa:
+
+- Validar informações digitadas pelo usuário.
+- Repetir tentativas de login.
+- Manter um menu ativo até o usuário escolher sair.
+- Solicitar valores até que sejam válidos.
+- Continuar uma operação até determinada condição ser satisfeita.
+_______________________________________________________________________________________
+
+        Exemplo: impedir um preço inválido.
+
+                preco = float(input("Digite o preço: R$ "))
+
+                while preco <= 0:
+                    print("Preço inválido!")
+                    preco = float(input("Digite um preço válido: R$ "))
+
+                print("Preço cadastrado!")
+
+'''

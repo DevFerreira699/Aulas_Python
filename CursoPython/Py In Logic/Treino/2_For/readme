@@ -1,0 +1,37 @@
+'''
+1. for — repetição controlada
+O for é usado quando você quer percorrer uma sequência de elementos ou repetir uma operação com base em uma quantidade conhecida.
+
+Por exemplo, imagine que você precisa mostrar os números de 1 a 5.
+
+            for numero in range(1, 6):
+                print(numero) // 1 2 3 4 5
+    
+    
+            Como funciona?
+
+- for: inicia a repetição.
+- numero: variável que recebe o valor de cada repetição.
+- in: indica de onde vêm os valores.
+- range(1, 6): gera os números de 1 até 5. O 6 não é incluído.
+- print(numero): mostra o número atual.    
+    
+O Python executa o bloco cinco vezes e encerra automaticamente. 
+    
+            Onde o for se enquadra?
+
+É especialmente útil quando você precisa:
+
+- Repetir algo uma quantidade definida de vezes.
+- Percorrer uma lista de produtos, nomes ou notas.
+- Somar valores de vários clientes.
+- Calcular a média de uma turma.
+- Processar registros de um banco de dados.   
+    
+            Exemplo: calcular a nota de 4 alunos.   
+    
+            for aluno in range(1, 5):
+                nota = float(input(f"Digite a nota do aluno {aluno}: "))
+                print(f"Nota: {nota}") 
+                
+'''
