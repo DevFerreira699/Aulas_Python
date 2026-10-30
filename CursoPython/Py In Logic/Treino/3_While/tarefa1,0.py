@@ -20,8 +20,6 @@ Requisitos da atividade
 6. Contabilizar quantos produtos estão em cada categoria.
 7. Calcular o valor total de todos os produtos cadastrados.
 8. Exibir um relatório final com todos os resultados.
-
-
 '''
 totalGeral = 0
 esgotados = 0
