@@ -13,7 +13,7 @@ totalSolicitado = 0
 # 2. CADASTRO DOS CLIENTES
 # ==================================================
 
-for i in range(5):
+for i in range(2):
     print("\n=== Solicitação de Empréstimo: Ferreira Bank's ===")
     nome = input("Nome do Cliente: ")
     salarioMensal = float(input("Salário mensal: "))
@@ -82,7 +82,7 @@ opcao = 0
 while opcao != 6:
 
     print("\n================================")
-    print("       FERREIRA BANK'S")
+    print("         FERREIRA BANK'S")
     print("================================")
     print("1 - Consultar todos os clientes")
     print("2 - Consultar estatísticas")
@@ -94,13 +94,12 @@ while opcao != 6:
 
     opcao = int(input("Escolha uma opção: "))
 
-
     # ==================================================
     # 7. OPÇÃO 1 - CONSULTAR TODOS OS CLIENTES
     # ==================================================
 
     if opcao == 1:
-
+        
         for cliente in clientes:
 
             print("\n=== Dados do Cliente ===")

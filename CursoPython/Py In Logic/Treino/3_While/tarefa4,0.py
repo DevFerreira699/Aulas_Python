@@ -38,6 +38,7 @@ que continue funcionando até o usuário escolher encerrar.
 3. Consultar o valor total dos empréstimos aprovados.
 4. Consultar um cliente pelo nome.
 5. Encerrar o programa.
+
 4. Relatório final
 
 Ao encerrar, apresente:
