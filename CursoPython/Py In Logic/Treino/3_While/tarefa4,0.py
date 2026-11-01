@@ -81,8 +81,7 @@ totalSolicitado = 0
 # ==================================================
 
 # Executa o cadastro de 5 clientes
-for i in range(5):
-
+for i in range(2):
     print("=== Solicitação de Empréstimo: Ferreira Bank's ===")
 
     # Solicita os dados do cliente
