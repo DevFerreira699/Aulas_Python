@@ -60,16 +60,17 @@ Desafio extra: permita que o usuário informe um valor de empréstimo
 e o programa calcule qual seria o salário mínimo necessário para aprová-lo.
 '''
 
-# LISTA
-clientes =[]
-# Acumuladores
+# - LISTA
+clientes = []
+
+# - ACUMULADORES
 aprovados = 0
 analise = 0
 reprovados = 0
-#contadores
+
+# - CONTADORES
 totalAprovado = 0
 totalSolicitado = 0
-
 
 for i in range(3):
     print("\n=== Solicitação de Empréstimo: Ferreira Bank's ===")
