@@ -1,4 +1,4 @@
-# Criando um dicionario
+# Criando um dicionario0
 #STAR WARS - EPISODIO IV - Uma nova esperança, George Lucas, 1977
 
 dicionario = {
