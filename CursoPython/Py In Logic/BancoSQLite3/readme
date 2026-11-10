@@ -1,0 +1,325 @@
+
+# 📚 SQLite — Resumo dos principais comandos SQL
+
+## 1. Criação de tabela — CREATE TABLE
+
+# Cria uma nova tabela no banco de dados.
+
+```sql
+CREATE TABLE IF NOT EXISTS produtos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    preco REAL NOT NULL,
+    estoque INTEGER
+);
+```
+
+- `CREATE TABLE`: cria uma tabela.
+- `IF NOT EXISTS`: cria somente se ela ainda não existir.
+- `PRIMARY KEY`: define a chave primária.
+- `AUTOINCREMENT`: gera IDs automaticamente.
+- `NOT NULL`: impede valores nulos.
+
+## 2. Inserir dados — INSERT INTO
+
+Adiciona um novo registro à tabela.
+
+```sql
+INSERT INTO produtos (nome, preco, estoque)
+VALUES ('Teclado', 250.00, 15);
+```
+
+Inserir vários registros:
+
+```sql
+INSERT INTO produtos (nome, preco, estoque)
+VALUES
+('Mouse', 120.00, 20),
+('Monitor', 900.00, 10),
+('Teclado', 250.00, 15);
+```
+
+## 3. Consultar dados — SELECT
+
+Consulta todos os registros:
+
+```sql
+SELECT * FROM produtos;
+```
+
+Consultar colunas específicas:
+
+```sql
+SELECT nome, preco FROM produtos;
+```
+
+Consultar um registro específico:
+
+```sql
+SELECT * FROM produtos
+WHERE id = 1;
+```
+
+## 4. Adicionar coluna — ALTER TABLE / ADD COLUMN
+
+Adiciona uma nova coluna a uma tabela existente.
+
+```sql
+ALTER TABLE produtos
+ADD COLUMN categoria TEXT;
+```
+
+## 5. Remover coluna — ALTER TABLE / DROP COLUMN
+
+Remove uma coluna da tabela.
+
+```sql
+ALTER TABLE produtos
+DROP COLUMN categoria;
+```
+
+**Atenção:** a remoção da coluna também elimina os dados armazenados nela.
+
+## 6. Renomear coluna — RENAME COLUMN
+
+Altera o nome de uma coluna existente.
+
+```sql
+ALTER TABLE produtos
+RENAME COLUMN estoque TO quantidade;
+```
+
+## 7. Renomear tabela — RENAME TO
+
+Altera o nome de uma tabela.
+
+```sql
+ALTER TABLE produtos
+RENAME TO mercadorias;
+```
+
+## 8. Atualizar dados — UPDATE
+
+Modifica o valor de um registro existente.
+
+```sql
+UPDATE produtos
+SET preco = 300.00
+WHERE id = 1;
+```
+
+Atualizar mais de uma coluna:
+
+```sql
+UPDATE produtos
+SET preco = 300.00,
+    estoque = 25
+WHERE id = 1;
+```
+
+**Cuidado:** sem `WHERE`, todos os registros da tabela serão atualizados.
+
+## 9. Excluir registros — DELETE
+
+Remove registros da tabela.
+
+```sql
+DELETE FROM produtos
+WHERE id = 1;
+```
+
+Excluir todos os registros:
+
+```sql
+DELETE FROM produtos;
+```
+
+**Atenção:** `DELETE` remove os registros, mas mantém a estrutura da tabela.
+
+## 10. Excluir tabela — DROP TABLE
+
+Remove completamente uma tabela do banco de dados.
+
+```sql
+DROP TABLE produtos;
+```
+
+## 11. Filtrar resultados — WHERE
+
+Permite consultar registros com condições específicas.
+
+```sql
+SELECT * FROM produtos
+WHERE preco > 100;
+```
+
+Operadores comuns:
+
+| Operador | Significado |
+|---|---|
+| `=` | Igual |
+| `!=` ou `<>` | Diferente |
+| `>` | Maior |
+| `<` | Menor |
+| `>=` | Maior ou igual |
+| `<=` | Menor ou igual |
+| `AND` | E |
+| `OR` | Ou |
+| `BETWEEN` | Entre valores |
+| `LIKE` | Pesquisa por padrão |
+| `IN` | Compara com uma lista de valores |
+
+## 12. Ordenar resultados — ORDER BY
+
+Ordena os registros.
+
+```sql
+SELECT * FROM produtos
+ORDER BY preco ASC;
+```
+
+- `ASC`: ordem crescente.
+- `DESC`: ordem decrescente.
+
+## 13. Limitar resultados — LIMIT
+
+Limita a quantidade de registros retornados.
+
+```sql
+SELECT * FROM produtos
+LIMIT 5;
+```
+
+## 14. Evitar duplicidade — DISTINCT
+
+Retorna valores sem repetição.
+
+```sql
+SELECT DISTINCT categoria
+FROM produtos;
+```
+
+## 15. Contar registros — COUNT
+
+Conta a quantidade de registros.
+
+```sql
+SELECT COUNT(*) FROM produtos;
+```
+
+## 16. Calcular valores — SUM, AVG, MIN e MAX
+
+```sql
+SELECT SUM(preco) FROM produtos;
+```
+Soma os valores.
+
+```sql
+SELECT AVG(preco) FROM produtos;
+```
+Calcula a média.
+
+```sql
+SELECT MIN(preco) FROM produtos;
+```
+Retorna o menor valor.
+
+```sql
+SELECT MAX(preco) FROM produtos;
+```
+Retorna o maior valor.
+
+---
+
+# 🐍 SQLite com Python
+
+## 17. Conectar ao banco de dados
+
+```python
+import sqlite3
+
+conexao = sqlite3.connect("TesteEmpresa.db")
+cursor = conexao.cursor()
+```
+
+## 18. Executar comandos SQL
+
+```python
+cursor.execute("""
+SELECT * FROM produtos
+""")
+```
+
+## 19. Recuperar resultados
+
+```python
+dados = cursor.fetchall()
+print(dados)
+```
+
+- `fetchall()`: retorna todos os resultados.
+- `fetchone()`: retorna um resultado.
+- `fetchmany(5)`: retorna até cinco resultados.
+
+## 20. Confirmar alterações — COMMIT
+
+Salva as alterações realizadas no banco de dados.
+
+```python
+conexao.commit()
+```
+
+## 21. Fechar conexão — CLOSE
+
+Encerra a conexão com o banco de dados.
+
+```python
+conexao.close()
+```
+
+## 22. Inserir dados com parâmetros
+
+Forma recomendada para inserir dados variáveis com Python:
+
+```python
+cursor.execute("""
+INSERT INTO produtos (nome, preco, estoque)
+VALUES (?, ?, ?)
+""", ("Mouse Gamer", 150.00, 20))
+
+conexao.commit()
+```
+
+Os `?` são parâmetros preenchidos pelos valores fornecidos, ajudando a evitar SQL Injection.
+
+---
+
+# 📌 Resumo rápido
+
+| Comando | Função |
+|---|---|
+| `CREATE TABLE` | Criar tabela |
+| `INSERT INTO` | Inserir registros |
+| `SELECT` | Consultar registros |
+| `ALTER TABLE` | Alterar estrutura |
+| `ADD COLUMN` | Adicionar coluna |
+| `DROP COLUMN` | Remover coluna |
+| `RENAME COLUMN` | Renomear coluna |
+| `RENAME TO` | Renomear tabela |
+| `UPDATE` | Atualizar registros |
+| `DELETE` | Excluir registros |
+| `DROP TABLE` | Excluir tabela |
+| `WHERE` | Filtrar registros |
+| `ORDER BY` | Ordenar resultados |
+| `LIMIT` | Limitar resultados |
+| `DISTINCT` | Eliminar duplicidades na consulta |
+| `COUNT` | Contar registros |
+| `SUM` | Somar valores |
+| `AVG` | Calcular média |
+| `MIN` | Encontrar menor valor |
+| `MAX` | Encontrar maior valor |
+| `COMMIT` | Confirmar alterações |
+
+**Observação:** os comandos de alteração e remoção de colunas dependem da versão do SQLite. O `DROP COLUMN` está disponível a partir do SQLite 3.35.0.
+
+'''
