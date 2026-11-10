@@ -1,4 +1,4 @@
-# Importanto 
+# Importanto0
 from collections import defaultdict
 
 #Criação de um default dict com uma lista como valor padrão
