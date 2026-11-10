@@ -1,5 +1,5 @@
 
-# Criando um set vazio
+# Criando um set vazio0
 conjunto = set()
 print(type(conjunto))
 
