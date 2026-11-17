@@ -1,3 +1,77 @@
+"""
+Tarefa Python — Sistema de Controle de Funcionários
+
+Objetivo: desenvolver um programa em Python utilizando variáveis, 
+condicionais (if, elif, else), laços de repetição (for e while) e funções (def).
+
+Não utilize banco de dados. Armazene as informações em listas e dicionários.
+
+Requisitos do sistema
+__________________________________________________________________________________________________
+Você deverá desenvolver um sistema que permita cadastrar e gerenciar funcionários de uma empresa.
+1. Menu principal
+
+O programa deverá apresentar as seguintes opções:
+
+1. Cadastrar funcionário.
+2. Listar funcionários.
+3. Consultar funcionário.
+4. Calcular folha salarial.
+5. Mostrar estatísticas.
+6. Sair.
+__________________________________________________________________________________________________
+2. Cadastro de funcionários
+Solicite as seguintes informações:
+- Nome.
+- Idade.
+- Cargo.
+- Salário.
+- Quantidade de horas trabalhadas no mês.
+
+Cada funcionário deverá ser armazenado em um dicionário, e todos os funcionários deverão ficar armazenados em uma lista.
+__________________________________________________________________________________________________
+3. Listagem de funcionários
+Utilize um for para percorrer a lista e apresentar todos os funcionários cadastrados.
+__________________________________________________________________________________________________
+4. Consulta de funcionário
+Solicite o nome de um funcionário e procure na lista.
+Utilize condicionais para:
+- Informar se o funcionário foi encontrado.
+- Apresentar sua ficha completa.
+- Informar quando não existir nenhum funcionário com aquele nome.
+__________________________________________________________________________________________________
+5. Folha salarial
+Percorra todos os funcionários e calcule:
+- Total gasto com salários.
+- Média salarial.
+- Maior salário.
+- Menor salário.
+__________________________________________________________________________________________________
+6. Estatísticas
+Apresente:
+- Quantidade total de funcionários.
+- Quantos recebem acima de R$ 3.000.
+- Quantos recebem abaixo de R$ 2.000.
+- Quantos têm idade igual ou superior a 30 anos.
+__________________________________________________________________________________________________
+7. Funções obrigatórias
+Utilize def para criar funções responsáveis por:
+- Exibir o menu.
+- Cadastrar funcionários.
+- Listar funcionários.
+- Consultar funcionários.
+- Calcular folha salarial.
+- Apresentar estatísticas.
+__________________________________________________________________________________________________
+8. Regras adicionais
+- O programa deverá continuar funcionando até o usuário escolher a opção de sair.
+- Não permitir salários negativos.
+- Não permitir idades negativas ou iguais a zero.
+- Não permitir cadastro sem nome.
+- Caso a lista esteja vazia, informar ao usuário.
+__________________________________________________________________________________________________
+"""
+
 from datetime import datetime
 
 funcionarios = [] 
