@@ -34,6 +34,6 @@ def cadastrar_funcionarios(nome_Funcinario, idade_funcionario, salario_funcionar
 
     return funcionario
 
-cadastrofuncionario = cadastrar_funcionarios("Ferreira","23","\n3600")
+cadastrofuncionario = cadastrar_funcionarios("Ferreira","23","3600")
 
 print(cadastrofuncionario) 
